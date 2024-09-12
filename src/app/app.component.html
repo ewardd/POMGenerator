@@ -1,0 +1,20 @@
+<nz-layout class="min-h-dvh">
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item>nav 1</li>
+    </ul>
+
+    <ng-content select="[slot='header']" />
+  </nz-header>
+
+  <nz-content class="min-h-full">
+    <nz-breadcrumb [nzAutoGenerate]="true" />
+
+    <div class="inner-content !min-h-full">
+      <router-outlet />
+    </div>
+  </nz-content>
+
+  <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+</nz-layout>

@@ -1,0 +1,50 @@
+<div class="flex flex-col justify-center items-stretch h-full gap-6">
+  <div class="flex flex-col gap-4">
+    <textarea
+      class="border border-black w-full"
+      rows="16"
+      nz-input
+      [(ngModel)]="inputValue"
+    ></textarea>
+    <textarea
+      class="border border-black w-full"
+      rows="4"
+      nz-input
+      [(ngModel)]="prefixes"
+    ></textarea>
+
+    <div class="flex gap-4 items-center">
+      <input nz-input [(ngModel)]="className" placeholder="Class name" />
+      <input
+        nz-input
+        [(ngModel)]="extendsClassName"
+        placeholder="Extends class"
+      />
+      <label class="flex-shrink-0" nz-checkbox [(ngModel)]="withMerge"
+        >With merge</label
+      >
+    </div>
+
+    <button nz-button nzType="primary" (click)="parse()">Add</button>
+  </div>
+
+  <div class="grid grid-cols-4 gap-4">
+    @for (type of elementTypes; track type) {
+    <app-element-grid [type]="type" />
+    }
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <textarea
+      class="border border-black w-full"
+      rows="16"
+      nz-input
+      [(ngModel)]="outputValue"
+    ></textarea>
+
+    <div class="flex gap-4 justify-center">
+      <button nz-button nzType="primary" (click)="generate()">Generate</button>
+      <button nz-button nzType="primary" (click)="clear()">Clear</button>
+    </div>
+  </div>
+</div>

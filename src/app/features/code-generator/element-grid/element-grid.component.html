@@ -1,0 +1,34 @@
+<nz-table #table [nzData]="data()">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Remove</th>
+
+      @for (param of params(); track param.key) {
+      <th
+        [title]="param.value.title"
+        [nzChecked]="isAllChecked.get(param.key) ?? false"
+        [nzIndeterminate]="isSomeChecked.get(param.key) ?? false"
+        (nzCheckedChange)="checkAll(param.key, $event)"
+      ></th>
+      }
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (item of table.data; track item.id) {
+    <tr>
+      <td [title]="item.selector">{{ item.title }}</td>
+      <td><button (click)="removeElement(item)">Remove</button></td>
+
+      @for (param of params(); track param.key) {
+      <td
+        [title]="param.value.title"
+        [nzChecked]="getCheckboxValue(item, param.key)"
+        (nzCheckedChange)="setCheckboxValue(item, param.key, $event)"
+      ></td>
+      }
+    </tr>
+    }
+  </tbody>
+</nz-table>

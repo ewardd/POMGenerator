@@ -86,7 +86,7 @@ export class DataParserService {
   ): Omit<IElementBase, 'type' | 'validations'> {
     return {
       id: (Math.random() + 1).toString(36).substring(7),
-      title,
+      title: title.replace('get', ''),
       selector,
     };
   }

@@ -48,7 +48,12 @@ export class CodeGeneratorComponent {
     return this._dataService.prefixes().join('\n');
   }
   public set prefixes(prefixes: string) {
-    this._dataService.prefixes.set(prefixes.split('\n').map((p) => p.trim()));
+    this._dataService.prefixes.set(
+      prefixes
+        .split('\n')
+        .map((p) => p.trim())
+        .filter((p) => !!p)
+    );
   }
 
   public elementTypes = Object.keys(ElementValidations) as ElementTypeEnum[];

@@ -8,9 +8,10 @@
 const elements = {
   Buttons: {
     getSubmitButton: () => new ButtonElement(cy.get("[data-testid=SELECTOR]")),
+    getSubmitButton2: () => new ButtonElement(cy.get("[data-testid=SELECTOR2]")),
   },
   Fields: {
-    getQuantityField: () => new FieldElement(cy.get("[data-testid=SELECTOR2]")),
+    getQuantityField: () => new FieldElement(cy.get("[data-testid=SELECTOR3]")),
   },
 };
 ```
@@ -66,7 +67,7 @@ export class CLASS_NAME extends BASE_CLASS_NAME {
 ### Дополнительные классы внутри задаются в поле extraClasses
 
 ```tsx
-public EXTRA_CLASS_NAME = new BASE_EXTRA_CLASS_NAME
+public EXTRA_CLASS_NAME = new BASE_EXTRA_CLASS_NAME();
 ```
 
 ### Методы класса
@@ -82,7 +83,7 @@ METHODS;
 Принимает код, формата
 
 ```tsx
-public EXTRA_CLASS_NAME = new BASE_EXTRA_CLASS_NAME
+public EXTRA_CLASS_NAME = new BASE_EXTRA_CLASS_NAME();
 ```
 
 ## Кнопка "Добавить" (addElementsButton)

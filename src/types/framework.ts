@@ -5,7 +5,7 @@ import { ElementValidations } from '../constants/ElementValidations';
 export interface IElementBase<T extends ElementTypeEnum = ElementTypeEnum> {
   id: string;
 
-  type: ElementTypeEnum;
+  type: T;
   title: string;
   selector: string;
 
@@ -15,23 +15,14 @@ export interface IElementBase<T extends ElementTypeEnum = ElementTypeEnum> {
   >;
 }
 
-export interface IButtonValidations
-  extends IElementBase<ElementTypeEnum.Button> {
-  validations: {
-    hasClick: WritableSignal<boolean>;
-    hasTextValidation: WritableSignal<boolean>;
-    hasTextIncludeValidation: WritableSignal<boolean>;
-    hasExistValidation: WritableSignal<boolean>;
-    hasNotExistValidation: WritableSignal<boolean>;
-    hasVisibilityValidation: WritableSignal<boolean>;
-  };
-}
-
-export interface IInputValidations
-  extends IElementBase<ElementTypeEnum.InputField> {
-  validations: {
-    hasExistValidation: WritableSignal<boolean>;
-    hasNotExistValidation: WritableSignal<boolean>;
-    hasVisibilityValidation: WritableSignal<boolean>;
-  };
-}
+/**
+ * TODO: Probably need a full list of all possible validations
+ * Required for sorting by methods instead of elements (like it's done right now)
+ *
+ * @see ElementMethods
+ */
+export type IValidationKeys =
+  | keyof (typeof ElementValidations)['BUTTON']
+  | keyof (typeof ElementValidations)['FIELD']
+  | keyof (typeof ElementValidations)['INPUT_FIELD']
+  | keyof (typeof ElementValidations)['INPUT_FILE'];

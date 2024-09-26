@@ -1,12 +1,15 @@
-<nz-table #table [nzData]="data()">
+<nz-table [nzScroll]="{ x: 'max-content' }" #table [nzData]="data()">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Remove</th>
-
+      <th rowspan="2">Name</th>
+      <th rowspan="2">Remove</th>
+      @for (param of params(); track param.key) {
+      <th class="!text-center">{{ param.value.title }}</th>
+      }
+    </tr>
+    <tr>
       @for (param of params(); track param.key) {
       <th
-        [title]="param.value.title"
         [nzChecked]="isAllChecked.get(param.key) ?? false"
         [nzIndeterminate]="isSomeChecked.get(param.key) ?? false"
         (nzCheckedChange)="checkAll(param.key, $event)"

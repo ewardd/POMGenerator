@@ -1,8 +1,7 @@
-import { Validators } from '@angular/forms';
 import { Injectable, signal } from '@angular/core';
+import { ElementValidations } from '../../constants/ElementValidations';
 import { ElementTypeEnum } from '../../constants/enums';
 import { IElementBase } from '../../types/framework';
-import { ElementValidations } from '../../constants/ElementValidations';
 
 @Injectable({
   providedIn: 'root',
@@ -67,7 +66,7 @@ export class DataParserService {
       case 'Field':
         type = ElementTypeEnum.Field;
         break;
-      case 'Input':
+      case 'InputField':
         type = ElementTypeEnum.InputField;
         break;
       case 'InputFile':

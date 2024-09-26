@@ -28,7 +28,7 @@
     <button nz-button nzType="primary" (click)="parse()">Add</button>
   </div>
 
-  <div class="grid grid-cols-4 gap-4">
+  <div class="flex flex-col gap-4">
     @for (type of elementTypes; track type) {
     <app-element-grid [type]="type" />
     }

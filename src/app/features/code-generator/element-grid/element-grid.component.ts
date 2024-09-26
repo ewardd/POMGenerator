@@ -1,10 +1,10 @@
-import { Component, computed, effect, input, Input } from '@angular/core';
-import { ElementTypeEnum } from '../../../../constants/enums';
+import { Component, computed, effect, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NzTableModule } from 'ng-zorro-antd/table';
-import { DataService } from '../../../framework/data.service';
-import { IElementBase } from '../../../../types/framework';
 import { ElementValidations } from '../../../../constants/ElementValidations';
+import { ElementTypeEnum } from '../../../../constants/enums';
+import { IElementBase } from '../../../../types/framework';
+import { DataService } from '../../../framework/data.service';
 
 @Component({
   selector: 'app-element-grid',

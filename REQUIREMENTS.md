@@ -138,8 +138,10 @@ public EXTRA_CLASS_NAME = new BASE_EXTRA_CLASS_NAME();
 | validateIsDisabled     |        |       |            |           | Validate is disabled       | validate | IsDisabled       |
 | validateNotDisabled    |        |       |            |           | Validate not disabled      | validate | NotDisabled      |
 | validateHasAttribute   |        |       |            |           | Validate has attribute     | validate | HasAttribute     |
-| validateValue          | -      |       | -          | -         | Validate value             | validate | Value            |
-| typeWithoutClear       | -      | -     |            | -         | Type into field            | typeInto | WithClear        |
+| validateValue          | -      |       |            | -         | Validate value             | validate | Value            |
+| typeWithoutClear       | -      | -     |            | -         | Type into field            | typeInto | WithoutClear        |
+| type     | -      | -     |            | -         | Type into field            | typeInto |        |
+| clear     | -      | -     |            | -         | Clear field value           | clear |        |
 | invokeValue            | -      | -     |            | -         | Invoke value               | invoke   | Value            |
 | invokeValueAndInputOne | -      | -     |            | -         | Invoke value and input one | invoke   | ValueAndInputOne |
 | deleteLastSymbol       | -      | -     |            | -         | Delete last symbol         | delete   | LastSymbol       |

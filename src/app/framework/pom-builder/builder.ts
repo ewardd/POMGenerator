@@ -1,3 +1,4 @@
+import { WritableSignal } from '@angular/core';
 import { ElementValidations } from '../../../constants/ElementValidations';
 import { ElementTypeEnum } from '../../../constants/enums';
 import { IElementBase, IValidationKeys } from '../../../types/framework';
@@ -174,9 +175,15 @@ export class PomBuilder {
     validation: IValidationKeys,
     elements: IElementBase[]
   ) => {
+    const filteredElements = elements.filter(
+      (element) =>
+        validation in element.validations &&
+        (element.validations[validation] as WritableSignal<boolean>)()
+    );
+    if (!filteredElements.length) return;
     this.result += '\n';
     this.result += this.withPadding(`//#region ${validation}\n`);
-    elements.forEach((el) => {
+    filteredElements.forEach((el) => {
       this.result += '\n';
       this.result += this.getMethodByElement(el, validation)
         .split('\n')
@@ -197,8 +204,6 @@ export class PomBuilder {
         return ElementMethods.getVisibilityValidationMethod(element);
       case 'hasClick':
         return ElementMethods.getClickMethod(element);
-      case 'hasVisibilityValidation':
-        return ElementMethods.getVisibilityValidationMethod(element);
       case 'hasTitleValidation':
         return ElementMethods.getTitleValidationMethod(element);
       case 'hasExistValidation':

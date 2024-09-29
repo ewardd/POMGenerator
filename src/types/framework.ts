@@ -1,6 +1,6 @@
 import { WritableSignal } from '@angular/core';
-import { ElementTypeEnum } from '../constants/enums';
 import { ElementValidations } from '../constants/ElementValidations';
+import { ElementTypeEnum } from '../constants/enums';
 
 export interface IElementBase<T extends ElementTypeEnum = ElementTypeEnum> {
   id: string;
@@ -10,7 +10,8 @@ export interface IElementBase<T extends ElementTypeEnum = ElementTypeEnum> {
   selector: string;
 
   validations: Record<
-    keyof (typeof ElementValidations)[T],
+    IValidationKeys,
+    // keyof (typeof ElementValidations)[T],
     WritableSignal<boolean>
   >;
 }

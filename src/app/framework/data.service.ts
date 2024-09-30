@@ -1,4 +1,4 @@
-import { effect, Injectable, Signal, signal } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 import { ElementTypeEnum } from '../../constants/enums';
 import { IElementBase } from '../../types/framework';
 
@@ -8,7 +8,7 @@ import { IElementBase } from '../../types/framework';
 export class DataService {
   public className = signal<string>('');
 
-  public extendsClassName = signal<string>('');
+  public extendsClassName = signal<string>('PageBase');
   public withMerge = signal<boolean>(false);
 
   public prefixes = signal<string[]>([]);

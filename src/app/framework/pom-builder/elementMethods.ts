@@ -9,6 +9,7 @@ export class ElementMethods {
     element: IElementBase
   ): string => `public click${element.title} = () => {
   this.Elements.${getKeyName(element.type)}s.get${element.title}().click();
+  return this;
 };`;
 
   public static getVisibilityValidationMethod = (
@@ -17,6 +18,7 @@ export class ElementMethods {
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateIsVisible(); 
+  return this;
 };`;
 
   public static getTitleValidationMethod = (
@@ -25,6 +27,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateTitle('text'); 
+  return this;
 };`;
 
   public static getExistValidationMethod = (
@@ -33,6 +36,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateExists();
+  return this;
 };`;
 
   public static getNotExistValidationMethod = (
@@ -41,6 +45,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateNotExist();
+  return this;
 };`;
 
   public static getTextValidationMethod = (
@@ -49,6 +54,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateHaveText(text);
+  return this;
 };`;
 
   public static getTextIncludeValidationMethod = (
@@ -57,6 +63,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateIncludeText(text);
+  return this;
 };`;
 
   public static getContainValidationMethod = (
@@ -65,6 +72,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateContains(text);
+  return this;
 };`;
 
   public static getDisabledValidationMethod = (
@@ -73,6 +81,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateIsDisabled();
+  return this;
 };`;
 
   public static getNotDisabledValidationMethod = (
@@ -81,6 +90,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateNotDisabled();
+  return this;
 };`;
 
   public static getAttributeValidationMethod = (
@@ -91,6 +101,7 @@ this.Elements.${getKeyName(element.type)}s.get${
   this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateHaveAttribute(attributeName, attributeValue);
+  return this;
 };`;
 
   public static getValueValidationMethod = (
@@ -99,6 +110,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateValue(text);
+  return this;
 };`;
 
   public static getTypeWithoutClearMethod = (
@@ -107,18 +119,21 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().typeWithoutClear(text);
+  return this;
 };`;
 
   public static getTypeMethod = (
     element: IElementBase
   ): string => `public typeInto${element.title} = (text: string) => {
 this.Elements.${getKeyName(element.type)}s.get${element.title}().type(text);
+  return this;
 };`;
 
   public static getClearMethod = (
     element: IElementBase
   ): string => `public clear${element.title} = () => {
 this.Elements.${getKeyName(element.type)}s.get${element.title}().clear();
+  return this;
 };`;
 
   public static getInvokeValueMethod = (
@@ -127,6 +142,7 @@ this.Elements.${getKeyName(element.type)}s.get${element.title}().clear();
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().invokeValue(text);
+  return this;
 };`;
 
   public static getInvokeValueAndInputOneMethod = (
@@ -137,6 +153,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().invokeValueAndInputOne(text);
+  return this;
 };`;
 
   public static getDeleteLastSymbolMethod = (
@@ -145,6 +162,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().deleteLastSymbol();
+  return this;
 };`;
 
   public static getValidateEmptyMethod = (
@@ -153,6 +171,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().validateEmpty(text);
+  return this;
 };`;
 
   public static getTypeAndCheckValueMethod = (
@@ -161,6 +180,7 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().typeAndCheckValue(text);
+  return this;
 };`;
 
   public static getUploadFileMethod = (
@@ -169,5 +189,6 @@ this.Elements.${getKeyName(element.type)}s.get${
 this.Elements.${getKeyName(element.type)}s.get${
     element.title
   }().uploadFile(text);
+  return this;
 };`;
 }
